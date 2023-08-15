@@ -16,7 +16,18 @@
 
   <script>
     // Write your code here
+    function foodTruckFestivalMenu(menus) {
+      let flattenMenu = menus.flat();
+      const menuNode = document.querySelector('#combined-menu');
+      
+      [...new Set(flattenMenu)].forEach(item => {
+        const liNode = document.createElement('li');
+        liNode.innerText = item;
+        menuNode.append(liNode);
+      });
+    }
 
+    foodTruckFestivalMenu([['Pizzas', 'Burgers', 'Fries'], ['Tacos', 'Fries'], ['Burgers', 'Pasta']]);
   </script>
 </body>
 
